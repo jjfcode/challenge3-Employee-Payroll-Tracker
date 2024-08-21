@@ -29,7 +29,10 @@ const collectEmployees = function () {
       proceed = false;
     }
   }
-
+  employees.sort(function (a, b) {
+    return a.lastName.localeCompare(b.lastName); // to compare the complete string
+  });
+  console.log(employees);
   return employees;
 };
 
@@ -44,7 +47,7 @@ const displayAverageSalary = function (employeesArray) {
   }
 
   let average = salaryTotal / employeesArray.length;
-  
+
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}`);
 
 };
