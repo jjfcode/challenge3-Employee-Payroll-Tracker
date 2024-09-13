@@ -11,7 +11,17 @@ const collectEmployees = function () {
   while (proceed) {
     const firstName = prompt("Enter First name:"); // Prompt First Name
     const lastName = prompt("Enter Last Name:"); // Prompt Last Name
-    const salary = prompt("Enter Salary:"); // Prompt Salary
+    let salary;
+    // Loop until a valid number is entered for salary
+    while (true) {
+      salary = prompt("Enter Salary:");
+      if (!isNaN(salary) && salary.trim() !== "") {
+        salary = parseFloat(salary);
+        break;
+      } else {
+        alert("Please enter a valid number for Salary");
+      }
+    }
 
     const newEmployee = {
       firstName,
